@@ -6,16 +6,35 @@ abstract class Mensch
     private string $lname;
     private string $geschlecht;
 
+    private int $alter;
+
+    /**
+     * @return int
+     */
+    public function getAlter(): int
+    {
+        return $this->alter;
+    }
+
+    /**
+     * @param int $alter
+     */
+    public function setAlter(int $alter): void
+    {
+        $this->alter = $alter;
+    }
+
     /**
      * @param string $fname
      * @param string $lname
      * @param string $geschlecht
      */
-    public function __construct(string $fname, string $lname, string $geschlecht)
+    public function __construct(string $fname, string $lname, string $geschlecht, int $alter)
     {
         $this->fname = $fname;
         $this->lname = $lname;
         $this->geschlecht = $geschlecht;
+        $this->alter = $alter;
     }
 
     /**
@@ -71,6 +90,16 @@ abstract class Mensch
     {
         echo "Hallo mein name ist $this->fname";
     }
+
+    public function sagdeinAlter()
+    {
+        echo 'Ich bin'.$this->alter.' Jahre alt';
+    }
+
+    public abstract function hoefflichVorstellen();
+
+
+
 
 
 }
